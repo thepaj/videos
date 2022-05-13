@@ -7,6 +7,7 @@ html {
 
 body {
   background-color: #d3d3d3;
+  height: 100%;
 }
 
 .navigation {
@@ -23,9 +24,67 @@ body {
   font-weight: bold;
 }
 
-/* Overview */
-.overview {
-  padding: 30px;
+/* Main page */
+.main-page {
+  padding: 50px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
+}
+
+.form-container {
+  padding: 10px 20px;
+}
+
+.form {
+}
+
+.form-label {
+  text-transform: uppercase;
+  margin-right: 10px;
+}
+
+.form-input {
+  height: 30px;
+}
+
+.video-list {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.video-item-container {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: #faf9f6;
+  cursor: pointer;
+  max-width: 300px;
+  max-height: 400px;
+  margin: 20px;
+  border-radius: 5px;
+  transition: all 0.2s;
+}
+
+.video-item-container:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.video-item-container:active {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.video-item-image {
+  max-width: 300px;
+}
+
+.video-item-content {
+  padding: 20px;
+}
+
+.video-item-header {
+  text-transform: uppercase;
 }

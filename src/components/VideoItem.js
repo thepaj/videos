@@ -1,13 +1,13 @@
 function VideoItem({ video, onVideoSelect }) {
   return (
-    <div onClick={() => onVideoSelect(video)} className="video-item item">
+    <div onClick={() => onVideoSelect(video)} className="video-item-container">
       <img
         alt={video.snippet.title}
-        className="ui image"
+        className="video-item-image"
         src={video.snippet.thumbnails.medium.url}
       />
-      <div className="content">
-        <div className="header">{video.snippet.title}</div>
+      <div className="video-item-content">
+        <div className="video-item-header">{video.snippet.title}</div>
       </div>
     </div>
   );

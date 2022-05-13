@@ -2,15 +2,16 @@ import VideoItem from "./VideoItem";
 
 function VideoList(props) {
     const videos = props.videos;
+    const onVideoSelect = props.onVideoSelect;
 
     return(
-        <div>
+        <div className='video-list'>
             {videos !== [] && videos.map(video => {
                 return(
                     <VideoItem
-                    key={videos.id.videoId}
+                    key={video.id.videoId}
                     video={video}
-                    // onVideoSelect={onVideoSelect}
+                    onVideoSelect={onVideoSelect}
                     />
                 )
             })}

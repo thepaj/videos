@@ -12,7 +12,7 @@
 // Comments should not be saved
 // Login should authenticate against a separate service
 
-import Overview from './components/Overview';
+import MainPage from './components/MainPage';
 import Navigation from './components/Navigation';
 
 import youtube from './apis/youtube';
@@ -21,6 +21,7 @@ import { useCallback, useEffect, useState } from 'react';
 
 function App() {
   const [videos, setVideos] = useState([]);
+  const [selectedVideo, setSelectedVideo] = useState(null);
 
   const onTermSubmit = useCallback(async term => {
     const response = await youtube.get('/search', {
@@ -28,20 +29,25 @@ function App() {
         q: term
       }
     });
-
+    console.log(response.data)
     setVideos(response.data.items);
+    setSelectedVideo(response.data.items[0])
   }, []);
 
   useEffect(() => {
-    onTermSubmit('svaz ceskych bohemu');
     console.log(`videos: ${videos}`)
-  }, [onTermSubmit, videos])
+  }, [videos]);
+
+  const onVideoSelect = (video) => {
+    setSelectedVideo(video);
+    console.log(video)
+  }
 
   return (
     <div className="app">
       <Navigation />
       <Routes>
-        <Route path='/' element={<Overview onTermSubmit={onTermSubmit} videos={videos}/>} />
+        <Route path='/' element={<MainPage onTermSubmit={onTermSubmit} videos={videos} onVideoSelect={onVideoSelect} selectedVideo={selectedVideo}/>} />
       </Routes>
     </div>
   );
