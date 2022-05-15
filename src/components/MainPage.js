@@ -10,7 +10,7 @@ function MainPage(props) {
   const selectedVideo = props.selectedVideo;
 
   return (
-    <div className='main-page'>
+    <div className='content'>
       <SearchBar onTermSubmit={onTermSubmit}/>
       <VideoList videos={videos} onVideoSelect={onVideoSelect} selectedVideo={selectedVideo}/>
     </div>

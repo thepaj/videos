@@ -14,6 +14,7 @@
 
 import MainPage from './components/MainPage';
 import Navigation from './components/Navigation';
+import VideoDetail from './components/VideoDetail';
 
 import youtube from './apis/youtube';
 import { Routes, Route } from 'react-router-dom';
@@ -35,8 +36,8 @@ function App() {
   }, []);
 
   useEffect(() => {
-    console.log(`videos: ${videos}`)
-  }, [videos]);
+    onTermSubmit('bunny')
+  }, []);
 
   const onVideoSelect = (video) => {
     setSelectedVideo(video);
@@ -48,6 +49,7 @@ function App() {
       <Navigation />
       <Routes>
         <Route path='/' element={<MainPage onTermSubmit={onTermSubmit} videos={videos} onVideoSelect={onVideoSelect} selectedVideo={selectedVideo}/>} />
+        <Route path='/video-detail/:videoId' element={<VideoDetail />} />
       </Routes>
     </div>
   );
