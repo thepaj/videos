@@ -10,9 +10,9 @@ function VideoList(props) {
                 return(
                     <Link 
                         to={{
-                            pathname: `/video-detail/${video.id.videoId}`,
-                            state: { video: video }
+                            pathname: `/video-detail/${video}`,
                         }}
+                        state={video}
                     >
                         <VideoItem
                             key={video.id.videoId}

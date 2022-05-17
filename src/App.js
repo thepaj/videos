@@ -41,7 +41,7 @@ function App() {
     <div className="app">
       <Navigation />
       <Routes>
-        <Route path='/' element={<MainPage onTermSubmit={onTermSubmit} videos={videos}/>} />
+        <Route path='/' element={<MainPage onTermSubmit={onTermSubmit} videos={videos}/>}/>
         <Route path='/video-detail/:videoId' element={<VideoDetail/>} />
       </Routes>
     </div>

@@ -1,25 +1,27 @@
-import { useEffect, useState } from 'react';
-import { useLocation } from "react-router-dom";
+import { useParams, useLocation } from "react-router-dom";
 
 function VideoDetail() {
+  const params = useParams();
   const location = useLocation();
-  const video = location.state?.video;
+  const video = location.state;
 
-  //const [selectedVideo, setVideo] = useState(video)
-
-  useEffect(() => {
-    console.log(video)
-  }, [video])
-
-  const videoSrc = `https://www.youtube.com/embed/${video.id.videoId}`;
+  const videoSrc = `https://www.youtube.com/embed/${params.videoId}`;
 
   return (
-    <div className='content'>
-      <div className='player-container'>
-         <iframe title="video player" src={videoSrc} />
+    <div className='video-detail-container'>
+      <div className='video-container'>
+        <iframe src={videoSrc} className='video' title={params.videoId}/>
       </div>
       <div className='video-detail-content'>
-        <h2>{video.snippet.title}</h2>
+        <div className='video-detail-title'>
+          {video.snippet.title}
+        </div>
+        <div className='video-detail-channel'>
+          {video.snippet.channelTitle}
+        </div>
+        <div className='video-detail-text'>
+          {video.snippet.description}
+        </div>
       </div>
     </div>
   );

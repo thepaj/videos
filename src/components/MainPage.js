@@ -10,7 +10,7 @@ function MainPage(props) {
   return (
     <div className='content'>
       <SearchBar onTermSubmit={onTermSubmit}/>
-      <VideoList videos={videos}/>
+      <VideoList videos={videos} />
     </div>
   );
 }

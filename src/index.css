@@ -89,3 +89,35 @@ body {
 .video-item-header {
   text-transform: uppercase;
 }
+
+/* VIDEO DETAIL */
+.video-detail-container {
+  background-color: #faf9f6;
+  margin: 30px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+}
+
+.video-container {
+  padding: 20px;
+}
+
+.video {
+  width: 800px;
+}
+
+.video-detail-content {
+  padding: 20px;
+}
+
+.video-detail-title {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.video-detail-text {
+  margin-top: 10px;
+}
