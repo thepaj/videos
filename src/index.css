@@ -6,7 +6,7 @@ html {
 }
 
 body {
-  background-color: #d3d3d3;
+  background-color: #acb1e6;
   height: 100%;
 }
 
@@ -64,6 +64,7 @@ body {
   max-height: 400px;
   margin: 20px;
   border-radius: 5px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   transition: all 0.2s;
 }
 

@@ -22,7 +22,6 @@ import { useCallback, useEffect, useState } from 'react';
 
 function App() {
   const [videos, setVideos] = useState([]);
-  const [selectedVideo, setSelectedVideo] = useState(null);
 
   const onTermSubmit = useCallback(async term => {
     const response = await youtube.get('/search', {
@@ -30,26 +29,20 @@ function App() {
         q: term
       }
     });
-    console.log(response.data)
+ 
     setVideos(response.data.items);
-    setSelectedVideo(response.data.items[0])
   }, []);
 
   useEffect(() => {
     onTermSubmit('bunny')
   }, []);
 
-  const onVideoSelect = (video) => {
-    setSelectedVideo(video);
-    console.log(video)
-  }
-
   return (
     <div className="app">
       <Navigation />
       <Routes>
-        <Route path='/' element={<MainPage onTermSubmit={onTermSubmit} videos={videos} onVideoSelect={onVideoSelect} selectedVideo={selectedVideo}/>} />
-        <Route path='/video-detail/:videoId' element={<VideoDetail />} />
+        <Route path='/' element={<MainPage onTermSubmit={onTermSubmit} videos={videos}/>} />
+        <Route path='/video-detail/:videoId' element={<VideoDetail/>} />
       </Routes>
     </div>
   );

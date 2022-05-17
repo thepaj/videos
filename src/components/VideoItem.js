@@ -1,6 +1,9 @@
-function VideoItem({ video, onVideoSelect }) {
+function VideoItem(props) {
+  
+  const video = props.video;
+
   return (
-    <div onClick={() => onVideoSelect(video)} className="video-item-container">
+    <div className="video-item-container">
       <img
         alt={video.snippet.title}
         className="video-item-image"

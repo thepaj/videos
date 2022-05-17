@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 
 function VideoList(props) {
     const videos = props.videos;
-    const onVideoSelect = props.onVideoSelect;
 
     return(
         <div className='video-list'>
@@ -11,13 +10,13 @@ function VideoList(props) {
                 return(
                     <Link 
                         to={{
-                            pathname: `/video-detail/${video.id.videoId}`
+                            pathname: `/video-detail/${video.id.videoId}`,
+                            state: { video: video }
                         }}
                     >
                         <VideoItem
-                        key={video.id.videoId}
-                        video={video}
-                        onVideoSelect={onVideoSelect}
+                            key={video.id.videoId}
+                            video={video}
                         />    
                     </Link>
                 )

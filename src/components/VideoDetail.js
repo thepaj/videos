@@ -1,7 +1,15 @@
-function VideoDetail(video) {
-  if (!video) {
-    return <div>Loading...</div>;
-  }
+import { useEffect, useState } from 'react';
+import { useLocation } from "react-router-dom";
+
+function VideoDetail() {
+  const location = useLocation();
+  const video = location.state?.video;
+
+  //const [selectedVideo, setVideo] = useState(video)
+
+  useEffect(() => {
+    console.log(video)
+  }, [video])
 
   const videoSrc = `https://www.youtube.com/embed/${video.id.videoId}`;
 
