@@ -34,7 +34,8 @@ function App() {
   }, []);
 
   useEffect(() => {
-    onTermSubmit('bunny')
+    onTermSubmit('bunny');
+    console.log(videos)
   }, []);
 
   return (
