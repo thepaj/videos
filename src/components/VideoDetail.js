@@ -12,7 +12,7 @@ function VideoDetail() {
   const videoSrc = `https://www.youtube.com/embed/${params.videoId}`;
 
   const toggleComments = () => {
-    setCommentsVisible(true)
+    setCommentsVisible(!commentsVisible)
   }
 
   return (
@@ -33,7 +33,7 @@ function VideoDetail() {
       </div>
       <div>
         {commentsVisible === true 
-          ? <CommentsList />
+          ? <CommentsList toggleComments={toggleComments}/>
           : <p className='comments-toggle' onClick={toggleComments}>View comments</p>
         }
       </div>
