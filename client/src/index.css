@@ -1,0 +1,181 @@
+*,
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #faf9f6;
+  height: 100%;
+  font-family: "Montserrat", sans-serif;
+  color: black;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+}
+
+.navigation {
+  height: 50px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #5e008c;
+}
+
+.nav-link {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #faf9f6;
+  font-weight: bold;
+  margin-left: 20px;
+}
+
+/* Main page */
+.content {
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.form-container {
+  padding: 10px 20px;
+}
+
+.form {
+}
+
+.form-label {
+  text-transform: uppercase;
+  margin-right: 10px;
+}
+
+.form-input {
+  height: 30px;
+}
+
+.video-list {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.video-item-container {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: white;
+  cursor: pointer;
+  max-width: 300px;
+  max-height: 400px;
+  margin: 20px;
+  border-radius: 5px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s;
+}
+
+.video-item-container:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.video-item-container:active {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.video-item-image {
+  max-width: 300px;
+}
+
+.video-item-content {
+  padding: 20px;
+}
+
+.video-item-header {
+  text-transform: uppercase;
+}
+
+/* VIDEO DETAIL */
+.video-detail-container {
+  margin: 30px;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.video-container {
+}
+
+.video {
+  width: 800px;
+  height: 400px;
+}
+
+.video-detail-content {
+  padding: 30px 0px;
+}
+
+.video-detail-title {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.video-detail-channel {
+  margin-top: 5px;
+}
+
+.video-detail-text {
+  margin-top: 20px;
+}
+
+.comments-toggle {
+  text-align: center;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  color: #5e008c;
+  cursor: pointer;
+}
+
+.comments-toggle:hover {
+  color: black;
+}
+
+.comments-list-container {
+  margin: 30px 0 0 0;
+}
+
+.comment {
+  margin-top: 20px;
+  background-color: #f0e7f4;
+}
+
+.comment-header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.user-info {
+  margin-left: 20px;
+  font-size: 15px;
+}
+
+.comment-text {
+  padding: 10px 10px;
+}
+
+.avatar {
+  height: 50px;
+  border-radius: 100%;
+}
+
+.comment-content {
+  padding: 10px;
+}
