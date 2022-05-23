@@ -5,7 +5,7 @@ function Comment(props) {
         <div className='comment'>
             <div className='comment-content'>
                 <div className='comment-header'>
-                    <img src={avatar} className='avatar' />
+                    <img src={avatar} className='avatar' alt="avatar"/>
                     <div className='user-info'>
                     <p>{props.name}</p>
                     <p>{props.email}</p>

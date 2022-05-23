@@ -16,9 +16,11 @@ import MainPage from './components/MainPage';
 import Navigation from './components/Navigation';
 import VideoDetail from './components/VideoDetail';
 
+
 import youtube from './apis/youtube';
 import { Routes, Route } from 'react-router-dom';
 import { useCallback, useEffect, useState } from 'react';
+
 
 function App() {
   const [videos, setVideos] = useState([]);
@@ -41,6 +43,7 @@ function App() {
   return (
     <div className="app">
       <Navigation />
+      <div class="g-signin2" data-onsuccess="onSignIn"></div>
       <Routes>
         <Route path='/' element={<MainPage onTermSubmit={onTermSubmit} videos={videos}/>}/>
         <Route path='/video-detail/:videoId' element={<VideoDetail/>} />
