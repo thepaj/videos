@@ -1,15 +1,34 @@
 import { useParams, useLocation } from "react-router-dom";
-import { useState } from "react";
+import youtube from '../apis/youtube';
+import { useEffect, useState } from "react";
 import CommentsList from './CommentsList';
 
-function VideoDetail() {
+function VideoDetail(props) {
   const [commentsVisible, setCommentsVisible] = useState(false);
+  const [relatedVideos, setRelatedVideos] = useState([]);
 
   const params = useParams();
   const location = useLocation();
   const video = location.state;
+  const authedUser = props.authedUser;
 
   const videoSrc = `https://www.youtube.com/embed/${params.videoId}`;
+
+  useEffect(() => {
+    async function fetchData() {
+      console.log()
+      const response = await youtube.get('/search', {
+        params: {
+          relatedToVideoId: `${params.videoId}`,
+          type: 'video'
+        }
+      });
+      setRelatedVideos(response.data.items)
+      console.log(relatedVideos)
+    }
+
+    fetchData();
+  }, [])
 
   const toggleComments = () => {
     setCommentsVisible(!commentsVisible)
@@ -33,7 +52,7 @@ function VideoDetail() {
       </div>
       <div>
         {commentsVisible === true 
-          ? <CommentsList toggleComments={toggleComments}/>
+          ? <CommentsList toggleComments={toggleComments} authedUser={authedUser} />
           : <p className='comments-toggle' onClick={toggleComments}>View comments</p>
         }
       </div>

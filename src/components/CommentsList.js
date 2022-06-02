@@ -4,11 +4,26 @@ import userComments from '../apis/commentsAPI';
 import AddComment from './AddComment';
 
 function CommentList(props) {
+    const [comments, setComments] = useState(userComments);
+
     // get props
     const toggleComments = props.toggleComments;
+    const authedUser = props.authedUser;
 
-    const addComment = (newComment) => {
-        console.log(newComment)
+    // add new coming
+    const addComment = (text) => {
+
+        // create new comment object
+        let newComment = {
+            "postId": 1,
+            "id": Math.random(5, 100),
+            "name": authedUser.name,
+            "email": authedUser.email,
+            "body": text
+        }
+
+        // add comment to the state
+        setComments([...comments, newComment]);
     }
 
     return(
@@ -18,7 +33,7 @@ function CommentList(props) {
             </div>
             <AddComment callback={addComment}/>
             <div>
-                {userComments.map(({ email,name, body, id }) => {
+                {comments.map(({ email,name, body, id }) => {
                     return( <Comment name={name} email={email} text={body} key={id} /> )
                 })}
             </div>

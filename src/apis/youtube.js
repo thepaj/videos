@@ -11,3 +11,13 @@ export default axios.create({
   },
   headers: {}
 });
+
+// export default related = axios.create({
+//   baseURL: 'https://www.googleapis.com/youtube/v3',
+//   params: {
+//     part: 'snippet',
+//     maxResults: 10,
+//     key: API_KEY,
+//   },
+//   headers: {}
+// })
